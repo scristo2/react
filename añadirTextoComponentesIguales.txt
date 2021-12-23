@@ -1,0 +1,19 @@
+function Helloworld(value){
+
+  return(
+
+     <div id='hello'>{value.mytext}</div>
+  );
+}
+
+
+
+function App() {
+  return (
+    <div>
+      This is my component: <Helloworld mytext="Hello Sergio" /> 
+      <Helloworld mytext="this is succesfully"/> 
+      <Helloworld mytext="increible"/> 
+     </div>
+  );
+}
