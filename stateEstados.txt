@@ -1,9 +1,9 @@
-class App extends React.Component{
+class App extends React.Component{ ///con este ejemplo de los estados le digo que si puso un boton y esta true el show d estate lo ponga falso e imprima otra cosa y viceversa
    
-    //herence
+   //herence
    state = {
-
-       show : false
+       
+       show : true
    }
 
    HelloWorld(props) {
@@ -14,21 +14,40 @@ class App extends React.Component{
       );
    }
 
+   
+   ///esto poruqe si no en la linea 38,cuando llames a la funcion te daria error 
+   //porque ha perdido el alcance y te tocaria hace this.togleShow().bind(this)
+   toggleShow(){
 
+      this.setState({show: !this.state.show}); //con esto de la exclamacion le digo que lo cambie a lo contrario de lo que este
+   }
+
+   //herence
    render(){
 
       if(this.state.show){
 
          return(
 
-            <this.HelloWorld name="Sergio"/>
+            <div className='App'>
+               <this.HelloWorld name="Sergio"/>
+               <br></br>
+               <button onClick={this.toggleShow.bind(this)}>toggle show</button>
+            </div>
+           
          );
       }else{
 
          return(
 
-            <this.HelloWorld name=",tHERE ARE NOT COMPONENTS"/>
+            <div className='App'>
+               <this.HelloWorld name=",tHERE ARE NOT COMPONENTS"/>
+               <button onClick={this.toggleShow.bind(this)}>toggle show</button>
+            </div>
          );
       }
    }
 }
+
+
+export default App;
