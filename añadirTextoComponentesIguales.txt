@@ -1,8 +1,11 @@
-function Helloworld(value){
+function Helloworld(value) {
 
-  return(
+  return (
 
-     <div id='hello'>{value.mytext}</div>
+    <div id='hello'>
+      <h1>{value.subtitle}</h1>
+      {value.mytext}
+    </div>
   );
 }
 
@@ -11,9 +14,12 @@ function Helloworld(value){
 function App() {
   return (
     <div>
-      This is my component: <Helloworld mytext="Hello Sergio" /> 
-      <Helloworld mytext="this is succesfully"/> 
-      <Helloworld mytext="increible"/> 
-     </div>
+      This is my component: 
+      <Helloworld mytext="Hello Sergio" subtitle='This is the title red' />
+      <Helloworld mytext="this is succesfully" />
+      <Helloworld mytext="increible" />
+    </div>
   );
 }
+
+export default App;
