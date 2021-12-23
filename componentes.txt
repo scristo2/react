@@ -1,0 +1,32 @@
+//se llma codigo jsx
+
+//primer elemento que es un div y dentro del div le añaidomos otro elemento que es helloWolrd,la primera siempre en mayuscula,y cuando se añada el elemento siempre separado de las etiquetas.
+
+
+function Helloworld(){
+
+  return(
+
+     <div id='hello'>Hello world</div>
+  )
+}
+
+
+function App() {
+  return (
+    <div>This is my component: <Helloworld/> </div>
+  );
+}
+
+//tambien se puede cerar asi elementos
+
+const App = () => <div>This is my component: <Helloworld/> </div>
+
+class App extends React.Component{
+    
+    ##function heredada
+   render(){
+
+      return <div>This is my component: <Helloworld/> </div>
+   }
+}
