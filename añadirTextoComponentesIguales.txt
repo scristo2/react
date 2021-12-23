@@ -1,3 +1,5 @@
+##abajo
+
 function Helloworld(value) {
 
   return (
@@ -23,3 +25,34 @@ function App() {
 }
 
 export default App;
+
+
+-------lo mismo pero pasando el texto con una funcion test()
+function test(){return 'jajaja';}
+
+
+function Helloworld(value) {
+
+  return (
+
+    <div id='hello'>
+      <h1>{value.subtitle}</h1>
+      {value.mytext}
+    </div>
+  );
+}
+
+
+
+function App() {
+  return (
+    <div>
+      This is my component: <Helloworld mytext="Hello Sergio" subtitle='This is the title red' />
+      <Helloworld mytext="this is succesfully" subtitle = {test()} /> <<<here
+      <Helloworld mytext="increible" />
+    </div>
+  );
+}
+
+export default App;
+
