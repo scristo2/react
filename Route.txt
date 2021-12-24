@@ -3,12 +3,21 @@ render() {
 
       return (
          
+             <div className='App'>
             <BrowserRouter>
+               <nav>
+                  <ul>
+                     <li><Link to="/">Home</Link></li> 
+                     <li><Link to="/about">About us</Link></li>
+                  </ul>
+               </nav>
                <Routes>
-                  <Route  path="/" element={<Principal text="this is the principal" />} />
-                  <Route path="/about" element={<Abouts text="this is about us" />} />
+                  <Route exact path="/" element={<Principal text="this is the principal" />} />
+                  <Route exact path="/about" element={<Abouts text="this is about us" />} />
+                  <Route path="*" element={<NotFound text="Not found" />} /> {/*not found*/}
                </Routes>
             </BrowserRouter>
+         </div>
          
       );
    }   
