@@ -1,0 +1,40 @@
+import axios from 'axios'; //igual que fecth pero mas rapido
+class Principal extends React.Component {
+
+
+   constructor(props) {
+
+      super(props);
+      this.state = {
+
+         name : []
+      }
+   }
+
+
+  async getData(){
+
+       this.setState({name : 'cargando ...'})
+     
+       const ss = await axios.get("https://orfibesa.des")
+       .then(response => response.data)
+       .then(text => this.setState({name : text.hola}))
+       .catch(e => this.setState({name : 'Ha ocurrio un error'}));
+        
+      
+   }
+
+
+   render() {
+
+      return (
+
+
+         <div>
+            <h1>{this.props.text}</h1>
+            <button onClick={this.getData.bind(this)}>click me</button>
+            <p>list : {this.state.name}</p>
+         </div>
+      );
+   }
+}
