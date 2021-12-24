@@ -1,0 +1,32 @@
+https://es.reactjs.org/docs/react-component.html#componentdidupdate
+///functions herence
+constructor()
+static getDerivedStateFromProps()->getDerivedStateFromProps se invoca justo antes de llamar al método de render, tanto en la montura inicial como en las actualizaciones posteriores. Debes devolver un objeto para actualizar el estado, o null para no actualizar nada.
+render()->para imprimir el sjx
+componentDidMount()->componentDidUpdate() se invoca inmediatamente después de que la actualización ocurra. Este método no es llamado para el renderizador inicial.
+componentDidUpdate()->componentDidUpdate() se invoca inmediatamente después de que la actualización ocurra. Este método no es llamado para el renderizador inicial
+getSnapshotBeforeUpdate()->getSnapshotBeforeUpdate() se invoca justo antes de que la salida renderizada más reciente se entregue, por ejemplo, al DOM. Permite al componente capturar cierta información del DOM (por ejemplo, la posición del scroll) antes de que potencialmente se cambie. Cualquier valor que se devuelva en este método de ciclo de vida se pasará como parámetro a componentDidUpdate().
+static getDerivedStateFromError()->Este ciclo de vida se invoca después de que un error haya sido lanzado por un componente descendiente. Recibe el error que fue lanzado como parámetro y debe devolver un valor para actualizar el estado{
+ class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError(error) {
+    // Actualiza el state, así el siguiente renderizado lo mostrará en la IU.
+    return { hasError: true };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      // Puedes renderizar cualquier interfaz de usuario diferente
+      return <h1>Something went wrong.</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+}
+componentDidCatch()->Este ciclo de vida se invoca después de que un error haya sido lanzado por un componente descendiente. Recibe dos parámetros:
+///
