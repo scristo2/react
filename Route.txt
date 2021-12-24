@@ -1,0 +1,14 @@
+import { Router, Route, Routes, BrowserRouter } from 'react-router-dom';
+render() {
+
+      return (
+         
+            <BrowserRouter>
+               <Routes>
+                  <Route  path="/" element={<Principal text="this is the principal" />} />
+                  <Route path="/about" element={<Abouts text="this is about us" />} />
+               </Routes>
+            </BrowserRouter>
+         
+      );
+   }
