@@ -1,0 +1,13 @@
+class Task extends Component{
+
+    
+    constructor(props){
+
+        super(props);
+
+        Task.propTypes = {
+
+            task : PropTypes.object.isRequired ///le estody diciendo que la porp que me esta pasando tiene que set ti`po objeto,como una clase component,si no da error en la consola
+                                               //mas tipos : task : PropTypes.number.isRequired
+        }
+    }
