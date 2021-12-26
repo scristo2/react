@@ -15,4 +15,5 @@ class Task extends Component{
                                                //mas tipos : task : PropTypes.number.isRequired
                                                // task : PropTypes.string.isRequired
                                                // task : PropTypes.array.isRequired
+                                               //task : PropTypes.func.isRequired etc
         }
