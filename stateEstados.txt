@@ -1,3 +1,25 @@
+####añadir a los que ya hay
+
+test(){ //<<<<< button function
+
+      const ss = 
+      {
+
+         title : ["task" + ( this.state.test.length + 1)],
+         description : 'sisiss',
+         id: this.state.test.length
+      }
+
+      this.setState({
+
+          test : [...this.state.test, ss ] <<<<esto es lo importante los tres puntos, acordarse que los [] es para que busque la variable
+          
+      });
+
+      console.log(this.state.test);
+   }
+
+
 class App extends React.Component{ ///con este ejemplo de los estados le digo que si puso un boton y esta true el show d estate lo ponga falso e imprima otra cosa y viceversa
    
    //herence
