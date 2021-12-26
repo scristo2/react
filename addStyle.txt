@@ -26,3 +26,32 @@ class Task extends Component{
 
 
 export default Task;
+
+3º- con variables
+class Task extends Component{
+   
+
+    render(){
+          
+        const redColor = {color : 'red}  
+ 
+        return( 
+
+            <div>
+                
+              <p className="red" style={redColor}> <<<<<<<<this tiene que ser array,no string,por eso doble {}
+                  {this.props.task.title} - {this.props.task.description} - {this.props.task.id}
+                  <span>
+                      <input type="checkbox"/>
+                      <button>X</button>
+                  </span>
+               </p>
+
+            </div>
+        )
+    }
+
+}
+
+
+export default Task;
