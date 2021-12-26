@@ -1,0 +1,59 @@
+import name from "./sample/task.json"
+
+--esto es lo que tiene el json importado
+[
+   
+    {
+
+        "id": 0,
+        "title" : "task one",
+        "description" : "lorem ipsum",
+        "done" : false
+    },
+
+    {
+
+        "id": 1,
+        "title" : "task two",
+        "description" : "lorem ipsum",
+        "done" : false
+    },
+
+    {
+
+        "id": 2,
+        "title" : "task three",
+        "description" : "lorem ipsum",
+        "done" : false
+    }
+
+]
+
+----------
+
+//console.log(task);
+
+class App extends Component{
+
+
+   constructor(props){
+
+       super(props);
+
+       this.state = {
+
+         tasks : tasks
+       }
+   }
+
+
+    render(){
+
+      return(
+
+          <div className='App'>
+             {this.state.tasks.map((e, i) => <h1 key={e.id}>{e.title}</h1>)} ////key es una propiedad de react, y cuando recorres la array necesita que le des una key unica,por eso se le ha dado el id
+          </div>
+      );
+    }
+}
