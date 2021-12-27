@@ -47,7 +47,7 @@ class App extends React.Component{ ///con este ejemplo de los estados le digo qu
       
        this.setState({
 
-            [e.target.name] : e.target.value  ##en un evento onchane por ejemplo, si el nombre del starte lo pones etre cprchete busca la variable y si coincide con el nombre
+            [e.target.name] : e.target.value  ##en un evento onchange por ejemplo, si el nombre del starte lo pones etre cprchete busca la variable y si coincide con el nombre
             state la cambia
         });
    }
