@@ -1,1 +1,3 @@
-
+array.map();
+array.filter(word => word.title !== $var) ##json
+array.filter(word => word.length  < 6) ##json
