@@ -46,11 +46,33 @@ class App extends Component {
    }
 
 
-   checkDone(){}
+   checkDone(id){
+
+      const newTask = this.state.tasks.map((task) => {
+
+           if(task.id === id){
+
+              task.done = !task.done ###es lo contario cada vez qu ele da,si esta en false pues se pone true y viceversa
+           }
+
+           return task;
+      });
+
+
+      this.setState({
+
+         tasks : newTask
+      })
+
+
+      
+   }
 
    
 
    render() {
+
+      
 
       return (
 
@@ -65,16 +87,19 @@ class App extends Component {
                  <th>description</th>
                  <th>id</th>
                  <th>Done</th>
-                 <th>deete</th>
+                 <th>delete</th>
               </tr>
               </thead>
               <tbody>
                 {this.state.tasks.map((e, i) => 
                   <tr key={i}>
                      <td>{e.title}</td>
-                     <td>{e.description}</td>
+                     <td style={{
+                        fontSize: '34px',
+                        textDecoration: e.done ? "line-through" : "none"   ####importante
+                     }}>{e.description}</td>
                      <td>{e.id}</td>
-                     <td><input type={"checkbox"}/></td>
+                     <td><input type={"checkbox"} onChange={this.checkDone.bind(this, e.id)}/></td>
                      <td><button onClick={this.deleteTask.bind(this, e.id)}>X</button></td>
                   </tr>
                 )}
