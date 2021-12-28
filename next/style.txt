@@ -1,0 +1,29 @@
+##creamos por ejmeplo en la carpeta components un archivo Title.jsx y con el mismo nombre creamos Title.module.jsx luego 
+ en el jsx import css
+ import styles from "./Title.module.css";
+ 
+ y llamamos a la varibel del css mas el id o classname
+ 
+ class Title extends Component{
+
+
+    constructor(props){
+
+        super(props);
+
+        this.state = {
+
+            author : 'Sergio'
+        }
+    }
+
+
+    render(){
+
+
+        return(<h1 className={styles.text} >{this.props.text} {this.state.author} </h1>)
+    }
+}
+
+
+export default Title;
