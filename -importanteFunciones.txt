@@ -1,3 +1,4 @@
 array.map();
 array.filter(word => word.title !== $var) ##json
 array.filter(word => word.length  < 6) ##json
+<button onClick={this.deleteTask.bind(this, e.id)} #aprir de this,cpn , sonlos parametros de l afuncion si le quieres pasar
