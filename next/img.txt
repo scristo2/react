@@ -1,0 +1,32 @@
+import React, {Component} from "react";
+import Image from "next/image";
+import Logotype from "../public/images/forSale.jpg";
+import Style from "../components/Logo.module.css";
+
+
+class Logo extends Component{
+
+
+      render(){
+        
+         var sys = {
+
+             width : '200px',
+             height : '200px'
+         }
+
+         return(
+
+             <div>
+                 <h1 className={Style.logo}>this is the logo</h1>
+                 <br/>
+                 <Image src={Logotype} width={200} height={200} />
+                 <br/>
+                 <img src={Logotype.src} style={sys} />   <<<<<<<<<<importante el .src si no no funciona
+             </div>
+         );
+      }
+}
+
+
+export default Logo;
