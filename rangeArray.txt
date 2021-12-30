@@ -1,0 +1,3 @@
+const aa = 10;
+var arr = [...Array(aa).keys()];
+console.log(arr.length);
