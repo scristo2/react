@@ -1,0 +1,17 @@
+ejemplo:
+
+class ErrorComponent extends Component{
+
+   render(){
+
+        return this.props.children;
+    }
+}
+
+##cuando lo uses en otro archivo
+
+render(){
+  <ErrorComponent> //////<<< devuelve el hijo que en este caso es Title
+      <Title/>
+  </ErrorComponent(>
+}
