@@ -1,0 +1,6 @@
+inside pages inside filder exaple products
+
+create file for example 
+
+[slug].jsx
+
