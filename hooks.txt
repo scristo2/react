@@ -1,17 +1,23 @@
 ##es solo para funciones,las clase es state
 
-import datas from "../public/test.json";
+import datas from "../components/test.json";
+
 function Logo(){
 
-    const [name, changetName] = useState([]);
+    const [name, getName] = useState([]);
 
-    useEffect(async () => changeName(datas))//Hook useEffect equivale a componentDidMount, componentDidUpdate y componentWillUnmount combinados.
+    const [surnames, changeSurnames] = useState("cristobal");
+    
+    ......se puden poner las uqe quieras
+
+    useEffect(async () => getName(datas))//Hook useEffect equivale a componentDidMount, componentDidUpdate y componentWillUnmount combinados.
 
     return(
 
        <div>
 
            <h1>{name.title}</h1>
+           <p>{surnames}</p>
        </div>
     );
 }
