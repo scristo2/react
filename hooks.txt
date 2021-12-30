@@ -1,0 +1,20 @@
+##es solo para funciones,las clase es state
+
+import datas from "../public/test.json";
+function Logo(){
+
+    const [name, changetName] = useState([]);
+
+    useEffect(async () => changeName(datas))//Hook useEffect equivale a componentDidMount, componentDidUpdate y componentWillUnmount combinados.
+
+    return(
+
+       <div>
+
+           <h1>{name.title}</h1>
+       </div>
+    );
+}
+
+
+export default Logo;
