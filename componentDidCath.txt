@@ -45,7 +45,7 @@ class HeaderApp extends Component{
             <div>
                 <p>header app</p>
                 <ErrorComponent>
-                    <Title/>
+                    <Title/> ###para forzar error por ejemplo en el render de Title ponen antes de return por ejemplo this.aa() que no existe
                 </ErrorComponent>
             </div>
         )
