@@ -1,4 +1,7 @@
 https://es.reactjs.org/docs/react-component.html#componentdidupdate
+
+######FECTG  O AXIOS O COGIDA DE DATOS SE RECOMIENDA EN COMPONENTDIDAMOUNT();
+
 ///functions herence
 constructor()
 static getDerivedStateFromProps()->getDerivedStateFromProps se invoca justo antes de llamar al método de render, tanto en la montura inicial como en las actualizaciones posteriores. Debes devolver un objeto para actualizar el estado, o null para no actualizar nada.
