@@ -1,0 +1,42 @@
+para reciclar y no tener que poner por ejemplo en todas las pages un navegafdor por ejemplo
+###creamos un elemnto container ejemplo,le añadimos el elemento navigation y luego al poner this.props.children en las pages 
+pro ejemplo se pone asi
+ render(){
+
+         return(
+              
+             <div>
+                  <Container>
+                      <h1>home</h1>
+                  </Container>
+             </div>
+         );
+     }
+     
+     ---------------------------------
+import react, { Component } from "react";
+import Navigation from "./navigation";
+
+class Container extends Component{
+
+    constructor(props){
+
+         super(props);
+    }
+
+
+    render(){
+
+         return(
+
+             <div>
+                 <Navigation/>
+                 <div>
+                     {this.props.children}
+                 </div>
+             </div>
+         );
+    }
+}
+
+export default Container;
