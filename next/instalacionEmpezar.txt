@@ -1,0 +1,10 @@
+1º-creamos carpeta en el escritorio
+2ªabrimos vsiual studio en la carpeta
+3ª-abrimos la terminal y ponemos npm init -y 
+4º-creamos carpeta public
+5ª-ejecutamos el comando en la terminal npm install next react react-dom
+6ª-abrmios el archivo package.json y en scripts añadimos :
+"dev": "next", ##modo desarrollo
+"build": "next build",
+"start" : "next start"
+7º-en la termina ejecutamos npm run dev ya esta para ver el la web
