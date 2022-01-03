@@ -6,3 +6,13 @@ console.log(this.gg.apply(null, ss)) <<< 6.  ###recomendable para pasar los argu
 
 ##o asi
  console.log(this.gg(...ss))
+ 
+ 
+ ---
+ var sss = [];
+
+ var ss = [1, 2, 3, 4];
+
+  sss = [...ss];
+
+ console.log(sss);  <<< [1,2,3,4]
