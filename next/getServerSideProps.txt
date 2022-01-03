@@ -20,6 +20,17 @@ export async  function getServerSideProps(){
 
          notFound: true  ###o esto o se pude usar redirect o tambien mandas un valor y y en render en la clase impirme lo que quieras depende de la prop
       }
+      oooooo
+      
+       return{
+
+         redirect: {
+
+             destination: "/about", ··la url qu equieras
+             permanent: false
+         }
+      }
+   
    
    }else{
 
