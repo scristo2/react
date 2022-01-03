@@ -1,0 +1,8 @@
+gg = (x, y, z) => (x + y + z);
+
+var ss = [1, 2, 3];
+
+console.log(this.gg.apply(null, ss)) <<< 6.  ###recomendable para pasar los argumentos a una funcion de un array;
+
+##o asi
+ console.log(this.gg(...ss))
