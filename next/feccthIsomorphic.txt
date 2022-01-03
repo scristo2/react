@@ -1,0 +1,7 @@
+npm install --save isomorphic-fetch
+
+<<https://www.npmjs.com/package/isomorphic-fetch
+
+import _fetch from "isomorphic-fetch";
+
+##funciona igual que el otro fetc,lo bueno de esto que deintinge entre front-end y backend
