@@ -1,0 +1,23 @@
+import { useRouter} from "next/router";
+import react, { Component, useEffect, useState } from "react";
+import { render } from "react-dom";
+
+
+##asi solo funciona con las funciones, da error useRouter en las clases
+
+export default function Router(){
+    
+    const router = useRouter();
+
+    const [name, getName] = useState(router.pathname);
+
+    useEffect(async () => console.log('sss'))
+
+    return <>
+      <h1>{name}</h1>
+      <button onClick={() => getName(router.asPath)}>click me</button>
+      <button onClick={() => router.reload()}>reload page</button>{/*reload page*/}
+    </>
+}
+
+
