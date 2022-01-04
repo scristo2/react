@@ -1,5 +1,8 @@
 https://jsonplaceholder.typicode.com
 
+https://reqres.in/ esta en usuarios te viene hasta fotod de perfil
+   
+
 class Posts extends Component {
 
     constructor(props) {
