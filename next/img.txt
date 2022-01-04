@@ -4,6 +4,18 @@ import Logotype from "../public/images/forSale.jpg";
 import Style from "../components/Logo.module.css";
 
 
+###para Imgades next para acceder a una src externa crea un archvio en la raiz que se llama next.config.js
+y añade esto
+
+module.exports = {
+
+    images: {
+
+        domains: ['reqres.in', "example.com"]
+    }
+}
+
+
 class Logo extends Component{
 
 
