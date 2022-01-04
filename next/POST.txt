@@ -101,8 +101,6 @@ class App extends Component {
     }
 }
 
-
-
 export async function getServerSideProps() {
 
     const datas = await _fetch("https://reqres.in/api/users")
