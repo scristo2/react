@@ -6,6 +6,7 @@ import { render } from "react-dom";
 
 ##asi solo funciona con las funciones, da error useRouter en las clases
 
+###recoradr que router.query es para el slug de por ejemplo pages/users/[id].jsx y te da la variable que hayas puestp en el id en la busqueda
 export default function Router(){
     
     const router = useRouter();
@@ -24,7 +25,9 @@ export default function Router(){
 <<<<<<<<<<<<<<<<< in class
 import React, { Component } from 'react'
 import {withRouter} from 'next/router';
-  
+
+##ejemplo pages/users/[id].jsx
+###recordar que this.props.router.query.id te da la varibale de la pagina
 class Router extends Component{
 
 
