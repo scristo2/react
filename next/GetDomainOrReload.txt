@@ -1,3 +1,4 @@
+##abajo class
 import { useRouter} from "next/router";
 import react, { Component, useEffect, useState } from "react";
 import { render } from "react-dom";
@@ -19,5 +20,25 @@ export default function Router(){
       <button onClick={() => router.reload()}>reload page</button>{/*reload page*/}
     </>
 }
+
+<<<<<<<<<<<<<<<<< in class
+import React, { Component } from 'react'
+import {withRouter} from 'next/router';
+  
+class Router extends Component{
+
+
+    render(){
+
+        return(<>
+           <h1>{this.props.router.pathname}</h1>
+           <h1>{this.props.router.asPath}</h1>
+           <br/>
+           <button onClick={() => this.props.router.reload()}>click me</button>
+        </>)
+    }
+}
+
+export default withRouter(Router);
 
 
