@@ -1,0 +1,23 @@
+ render() {
+
+         
+
+        return (
+
+            <div className="ss">
+                <Container title="home">
+                    <h1>Homes</h1>
+                    <Users users={this.state.datas}/>
+                </Container>
+                <Link href={"/number"}><a>posts</a></Link>
+                <h1 className="hello">hello</h1>
+                <style jsx>{` #<<<<<<<<<<<
+                  .hello{
+
+                     color: red;
+                  }
+                `}</style>
+            </div>
+
+        );
+    }
