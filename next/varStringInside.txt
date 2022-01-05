@@ -1,0 +1,1 @@
+`https://as.com/${index}` en react siempre con las commilas de php de mysql para las varibale sin tener que concatenar
