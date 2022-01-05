@@ -1,0 +1,4 @@
+import Router from "next/router";
+
+Router.push('/users/${i}') es como Link
+Router.reload(); etc
