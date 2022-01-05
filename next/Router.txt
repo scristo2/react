@@ -1,4 +1,4 @@
 import Router from "next/router";
 
-Router.push('/users/${i}') es como Link
+Router.push('/users/${i}') es como Link recomendable para routas dinamicas como pages/users/[id]
 Router.reload(); etc
