@@ -1,0 +1,79 @@
+##para ver cada pagina con un slug [id].jsx por ejemplo de un contenifo
+importante acordarse de fallback que si es false tiene que respetar el paarams con su numbre y si es true pues no
+import _fetch from "isomorphic-fetch";
+import react, {Component} from "react";
+
+class Number extends Component{
+
+
+    constructor(props){
+
+        super(props);
+    }
+
+
+    render(){
+
+        console.log(this.props.posts);
+        
+        const datas = [this.props.posts];
+
+        return(<>
+          {
+
+             datas.map((e, i) => {
+
+                 return(<div key={i}>
+
+                     <p>{e.title}</p>
+                 </div>)
+              })
+          }
+        </>);
+    }
+}
+
+export default Number;
+
+export async function getStaticProps(context){
+
+    console.log(context.params.number + "<<<<");
+
+    const response = await _fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.number}`)
+    .then(res => res.json());
+
+    return{
+
+        props: {
+
+            posts : response
+        }
+    }
+
+}
+ 
+
+export async function getStaticPaths(){
+
+    const response = await _fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json());
+
+    const paths = response.map((e, i) => {
+
+        return {
+
+            params: {
+
+                number: `${e.id}`,
+               
+            }
+        }
+    })
+
+    return {
+
+        
+        paths : paths,
+        fallback: false
+    }
+}
