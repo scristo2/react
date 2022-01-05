@@ -1,3 +1,20 @@
+####export async function getServerSideProps(context){
+
+
+     console.log(context.req.method);
+     
+     ##para las ruas y buscar el query x ejemplo de pages/users/[id].jsx
+     
+     console.log(context.query.id) ##id por el slug [id]
+
+     return {
+
+        props : {}
+     }
+}
+
+-------------
+
 export async  function getServerSideProps(){
 
     const datas = await _fetch("https://jsonplaceholder.typicode.com") ##error forzado falta /users
