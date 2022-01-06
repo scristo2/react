@@ -1,0 +1,15 @@
+res.status(200).json({hola : 'hola'});
+res.status(403).end();
+res.status(200).send("hello world);
+
+export default async function handler(req, res){
+
+     if(req.method === "POST"){
+
+         return res.status(200).json({hola : 'hola'});
+     
+     }else{
+
+        return res.status(403).send("you have no permissionaaa");
+     }
+}
