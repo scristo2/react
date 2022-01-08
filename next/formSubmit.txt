@@ -1,0 +1,7 @@
+submitForm = (e) => {
+
+        alert('ya');
+
+        e.preventDefault() ? e.preventDefault() : (e.returnValue = false); // ie < 11
+
+    }
