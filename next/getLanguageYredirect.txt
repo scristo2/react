@@ -1,0 +1,62 @@
+###primero en next.config.js 
+module.exports = {
+    i18n: {
+      locales: ["en", 'es', 'fr'],
+      defaultLocale: "en",
+    },
+    
+  };
+##next el solo dependiendo de las variables que hayas puesto en locales te lo cambia el solo.
+y al añadir esto puedto en las pagescon staticgetprops o serverside con el context accedes a la que se cumpal,si no coge el ldesfualt locale 
+  
+  export async function getServerSideProps(context) {
+
+
+
+    if (context.locale === "fr" || context.locale === "es") {
+
+        var ulrDestiny = "";
+
+        switch (context.locale) {
+
+            case 'fr':
+
+                ulrDestiny = "https://fr.leagueoflegendspremium.com";
+                break;
+
+            case 'es':
+
+                ulrDestiny = "https://leagueoflegendspremium.es";
+                break;
+
+
+
+        }
+
+        return {
+
+            redirect: {
+
+                permanent: false,
+                destination: ulrDestiny
+            }
+        }
+    
+    
+    }else{
+
+        return {
+
+
+            props: {
+    
+                props: {}
+            }
+        }
+    }
+
+    
+}
+
+
+
