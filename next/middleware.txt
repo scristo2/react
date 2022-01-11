@@ -1,0 +1,20 @@
+dentro pages _middleware.ts 
+##se pueden poner tambien mas dentro de los directorios dentro de pages ejy otro fuera ejemplo pages/login/index.jsx y _middleware.ts,pero siempre se va a ejectuar el que esta dentro primero de los subdirecto
+rios
+
+import { NextResponse, NextRequest } from "next/server";
+
+export  function middleware(req: NextRequest, res: NextResponse) {
+
+    let response = NextResponse.next();
+
+
+    if(/succesfully$/.test(req.url.toString())){
+
+        console.log('succesfully ' + req);
+    
+    }
+
+    return response;
+
+}
