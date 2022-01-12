@@ -10,3 +10,6 @@
 7º-en la termina ejecutamos npm run dev ya esta para ver el la web
 8º-.gitignore
 9ª-git init 
+10-git remote add origin https://github.com/scristo2/lol.git
+git branch -M main
+git push -u origin main
