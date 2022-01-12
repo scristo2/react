@@ -8,3 +8,5 @@
 "build": "next build",
 "start" : "next start"
 7º-en la termina ejecutamos npm run dev ya esta para ver el la web
+8º-.gitignore
+9ª-git init 
