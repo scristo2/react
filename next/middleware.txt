@@ -9,7 +9,7 @@ export  function middleware(req: NextRequest, res: NextResponse) {
     let response = NextResponse.next();
 
 
-    if(/succesfully$/.test(req.url.toString())){
+    if(/succesfully$/.test(request.nextUrl.pathname.toString())){
 
         console.log('succesfully ' + req);
     
