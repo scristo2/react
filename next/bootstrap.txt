@@ -1,0 +1,14 @@
+npm install npm i bootstrap
+
+<<en _app.jsx  en este orden de importacion y ya te funciona
+import 'bootstrap/dist/css/bootstrap.css';
+import "../styles/global.css";
+
+function AppHome({Component, pageProps}){
+
+    return <Component {...pageProps}/>
+}
+
+export default AppHome;
+
+### y acoradrse del script ya que muchos llevan javascript import "bootstrap/dist/js/bootstrap";
