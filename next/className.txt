@@ -1,0 +1,3 @@
+##mas de una clase,acordarse que en el tercer ejemplo,la clase ja,al estar importado de otra file con la variable styel,meterla en el global cc 
+o haciendo como las ottras y lo creas dentro del css importado y seria igual que las otras
+<p className={`${style.xx} ${style.chan} ${"ja"}`}>aaa</p>
