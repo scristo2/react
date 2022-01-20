@@ -1,0 +1,40 @@
+class Test extends Component {
+
+    constructor(props) {
+
+        super(props);
+
+        this.state = {
+
+            time : new Date()
+        }
+    }
+
+   
+    componentDidMount(){
+
+          this.id = setInterval(() => {
+             this.setState({
+                 time : new Date()
+             })
+         }, 1000);
+    }
+
+
+    stop = () => {
+
+        clearInterval(this.id)
+
+        setInterval()
+    }
+
+
+    render() {
+
+        return (<>
+           <p onClick={this.stop}>{this.state.time.getSeconds()}</p>
+        </>);
+    }
+}
+
+export default Test;
