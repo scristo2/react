@@ -1,6 +1,20 @@
 #https://www.npmjs.com/package/cookies-next
 <<<<<npm install --save cookies-next
 import { getCookies, getCookie, setCookies, removeCookies } from "cookies-next";
+
+export function getServerSideProps(context){
+    
+    const req = context.req;
+    const res = context.res;
+    const aa = getCookie('tokenid', {req, res});
+
+    console.log(aa);
+
+    return {
+
+        props : {}
+    }
+}
 export async function getServerSideProps({req, res}){
      
 
