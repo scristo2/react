@@ -1,0 +1,86 @@
+class Home extends Component {
+
+    constructor(props) {
+
+        super(props);
+    }
+
+
+
+    async componentDidMount() {
+
+        const formData = new FormData();
+        formData.append("ip", this.props.ip);
+
+        const datasVisit = ["https://orfibesa.es/lol/addVisit.php", this.props.ip, getDate()['complete']];
+        const dataTemporalVisit = ["https://orfibesa.es/lol/addVisitTemporal.php", this.props.ip, ""];
+        {/*const datadeletetemporalVisit =  addVisit("https://orfibesa.es/lol/deleteVisitTemporal.php", this.props.ip, "");*/};
+
+        const res = await addVisit(...datasVisit);
+        const res1 = await addVisit(...dataTemporalVisit);
+
+        res1 ? console.log('bien') : console.log('nop');
+
+        {/*close tab or browse*/ }
+        document.addEventListener("visibilitychange", () => {
+
+            if(document.visibilityState === "visible"){
+
+                navigator.sendBeacon("https://orfibesa.es/lol/addVisitTemporal.php", formData)
+                //addVisit(...dataTemporalVisit);
+            
+            }else{
+
+                navigator.sendBeacon("https://orfibesa.es/lol/deleteVisitTemporal.php", formData);
+                //addVisit("https://orfibesa.es/lol/deleteVisitTemporal.php", this.props.ip, "");
+            }
+        });
+    }
+
+
+
+    render() {
+
+        return (<>
+            <Head>
+                <meta httpEquiv="content-type" content="text/html" charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta httpEquiv="Expires" content={0} />
+                <meta httpEquiv="Last-Modified" content={0} />
+                <meta httpEquiv="Cache-Control" content="no-cache, mustrevalidate" />
+                <meta httpEquiv="Pragma" content="no-cache" />
+                <meta name="author" content="Sergio Cristobal Colino" />
+                <meta name="description" content="Welcome to server atlantic,the favorite site of companies and programmers where just by registering you will have access to more than 100 different apis." />
+                <meta name="keywords" content="api, apis, crypto, futbol, bitcoin, ethereum, php, html, css" />
+                <meta name="robots" content="index" />
+                <meta name="robots" content="follow" />
+                <title>for sale</title>
+            </Head>
+            <Layout>
+                <Image src={logo} width={144} height={144} priority alt="Image" />
+                <Form />
+            </Layout>
+        </>)
+    }
+}
+
+
+export default Home;
+
+
+export function getServerSideProps(context) {
+
+
+
+    return {
+
+
+        props: {
+
+            ip: context.req.connection.remoteAddress || "undefined",
+            locale: context.locale || "undefined"
+
+        }
+    }
+}
+
