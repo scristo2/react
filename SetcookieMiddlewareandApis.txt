@@ -1,0 +1,24 @@
+/pages/middleware.ts
+export function middleware(req : NextRequest, res : NextResponse){
+
+    const response = NextResponse.next();
+    response.cookie('ips', req.ip || req.geo.country); #lo de || y el pais es para que no se te olvide que estan esta funciones,son apis que funcioan en vercel,no en localhost
+    return response;
+}
+
+###y luego se pude ontener en una pagima asi
+export function getServerSideProps(context) {
+    
+    console.log(context.req.cookies.ips); <<<< asi,ips es el nombre de la cookie 
+
+    return {
+
+
+        props: {
+
+           
+            locale: context.locale || "undefined"
+
+        }
+    }
+}
