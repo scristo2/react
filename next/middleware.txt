@@ -18,3 +18,14 @@ export  function middleware(req: NextRequest, res: NextResponse) {
     return response;
 
 }
+
+
+###get cookie insert in the dom 
+
+export async function middleware(req : NextRequest, res : NextResponse){
+
+     const response = NextResponse.next();
+     console.log('la cookie tiene el valor de ' + req.cookies['tokenId'] ) ;
+     return response;
+
+}
