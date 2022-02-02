@@ -24,8 +24,16 @@ export  function middleware(req: NextRequest, res: NextResponse) {
 
 export async function middleware(req : NextRequest, res : NextResponse){
 
+    
      const response = NextResponse.next();
-     console.log('la cookie tiene el valor de ' + req.cookies['tokenId'] ) ;
-     return response;
+     
+     if(req.cookies['tokenId'] === "hello"){
+
+        return response;
+     
+    }else{
+
+        return NextResponse.redirect("./admin");
+    }
 
 }
