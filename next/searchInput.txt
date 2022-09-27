@@ -1,0 +1,75 @@
+import { Component } from "react";
+
+class Test extends Component{
+
+    constructor(props){
+
+        super(props);
+
+        this.state = {
+
+            value : "",
+            vars : ['mercedes', 'audi', 'maclaren', 'aston martin'],
+            matchvars : []
+        }
+    }
+
+    setdata = (e) => {
+
+        this.setState({
+
+            [e.target.name] : e.target.value
+            
+        })
+
+        var testss = new RegExp("^" + e.target.value); ##esto es que empieza por ....
+
+        if(e.target.value.length > 0){
+
+            this.state.vars.map((a, i) => {
+
+                if(testss.test(a)){
+
+                     if(!this.state.matchvars.includes(a)){
+
+                        this.state.matchvars.push(a);
+                     }
+                
+                }else{
+
+                    this.state.matchvars.map((aa, ii) => {
+
+                         if(!testss.test(aa)){
+
+                            this.state.matchvars.pop(aa)
+                         }
+                    })
+                }
+            });
+        
+        }else{
+
+            this.setState({
+
+                matchvars : []
+            })
+        }
+        
+
+    }
+
+    render(){
+
+        return(<>
+          <input type="text" name="value" onChange={this.setdata} value={this.state.value}  />
+          <ul>
+            {this.state.matchvars.map((e , i) => {
+
+                return <li key={i}>{e}</li>
+            })}
+          </ul>
+        </>)
+    }
+}
+
+export default Test;
