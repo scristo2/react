@@ -22,39 +22,26 @@ class Test extends Component{
             
         })
 
-        var testss = new RegExp("^" + e.target.value); ##esto es que empieza por ....
+       
 
-        if(e.target.value.length > 0){
+        var newReg = new RegExp("^" + e);
 
-            this.state.vars.map((a, i) => {
+        var  matched = this.state.futuredDatasSearchUsers.filter(data => {return newReg.test(data.last_name)})
 
-                if(testss.test(a)){
+        this.setState({
 
-                     if(!this.state.matchvars.includes(a)){
+            matchfuturedDatasSearchUsers : matched
+        })
 
-                        this.state.matchvars.push(a);
-                     }
-                
-                }else{
-
-                    this.state.matchvars.map((aa, ii) => {
-
-                         if(!testss.test(aa)){
-
-                            this.state.matchvars.pop(aa)
-                         }
-                    })
-                }
-            });
-        
-        }else{
+        if(e.length < 1 ){
 
             this.setState({
 
-                matchvars : []
+                matchfuturedDatasSearchUsers : []
             })
         }
-        
+
+   
 
     }
 
