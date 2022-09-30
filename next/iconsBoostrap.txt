@@ -1,0 +1,24 @@
+https://www.npmjs.com/package/react-bootstrap-icons
+npm install react-bootstrap-icons --save
+##ver los iconos antes https://icons.getbootstrap.com/#install
+
+import { PersonCircle } from 'react-bootstrap-icons';
+class Test extends Component {
+
+    constructor(props) {
+
+        super(props);
+
+
+    }
+
+
+    render() {
+
+        return (<>
+            <PersonCircle  color="royalblue" size={96}/>
+        </>)
+    }
+}
+
+export default Test;
