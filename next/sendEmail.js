@@ -23,7 +23,7 @@ export default async  function handler(req, res) {
             cc: '<admin@orfibesa.es>',
             subject: 'testing emailjs',
              attachment: [
-                { data: `<html><h1>${aa}</h1></html>`, alternative: true },
+                { data: `<html><h1 style="color:red;">${aa}</h1></html>`, alternative: true },
             ],
         });
         res.status(200).json({status : 'ok'});
