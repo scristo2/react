@@ -1,0 +1,63 @@
+###en la api esto
+export default async function  handler(req, res){
+
+    const dataPostForm = JSON.parse(req.body); <<<<<<<<<<<<<importante si no le decodifa no lo lea el navegador bien el form que ha enviado
+
+    
+   if(req.method === "GET"){
+
+      res.status(401).json({status : "failed", message : "you have not permision"});
+   
+   }else{
+
+        if(process.env.TOKEN_REGISTER){
+
+            res.status(200).json({result : {status : 'xxxxxxxxxx', username : dataPostForm.username}}); <<<<<<<<<<<<<<<<<<
+        
+        }else{
+
+            res.status(401).json({status : "failed", message : "you have not permision"});
+        }
+   }
+
+}
+
+--------------------------
+const clickRegister = async (e) => {
+
+
+    e.preventDefault();
+
+    try {
+
+      const res = await axios.post("/api/login/registers", {
+
+        username: username,
+        email: email,
+        password: password,
+        password2: password2
+
+      }, {
+        headers: {
+          'content-type': "application/json"
+        }
+      }).then(data => data.data)
+        .catch(e => false)
+
+
+      if (!res) {
+
+        throw new Error("error al registrase");
+
+      } else {
+
+        alert(res.result.username);
+      }
+
+    } catch (e) {
+
+      console.log('aawwwaa');
+      const errorModal = document.querySelector("#alertError");
+      errorModal.click();
+
+    }
