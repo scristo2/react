@@ -1,6 +1,27 @@
 ###dentro de pages creamos una carpeta llamada api/ejemplo.jsx
 
 import _fetch from "isomorphic-fetch";
+
+------------------------json
+const verifySession = await _fecth(`${process.env.BASE_URL}/api/auth/getTokenSession`, {
+
+        method: 'POST',
+        body: JSON.stringify({ sessionToken: context.req.session.user?.sessionToken }),
+        headers: {
+
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(data => data.json())
+        .then(result => result.user?.isLogged)
+        .catch((e) => {
+
+          console.log(e);
+          return false;
+        });
+        
+        
+--------------------------------
 export default async function handler(req, res){
 
     if(req.method === "POST"){
