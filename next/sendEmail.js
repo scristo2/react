@@ -8,11 +8,11 @@ export default async  function handler(req, res) {
     const aa = "variable"; ejemeplo
 
     const client = new SMTPClient({
-        user: 'admin@orfibesa.es',
-        password: '32)@#bI~1@54',
-        host: 'gnldm1074.siteground.biz',
+        user: '',
+        password: '',
+        host: '',
         ssl: true,
-        port : 465
+        port : ''
     });
 
     try {
