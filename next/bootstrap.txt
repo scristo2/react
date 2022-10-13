@@ -1,4 +1,29 @@
 npm install npm i bootstrap
+DOS OPCIONES:
+->USAR EL NPM BOOSTRAP 
+->DECARGAR FOLDER BOOSTRP DE LA WEB
+
+1º---------
+
+import '../styles/globals.css'
+import "../public/bootstrap-5.2.2/css/bootstrap.min.css";
+import Script from 'next/script';
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Script src='/bootstrap-5.2.2/js/bootstrap.bundle.min.js'></Script> ####Y ASI APARECE EN TODAS LAS PAGINAS
+      <AppProvider>
+        <Component {...pageProps} />
+      </AppProvider>
+    </>
+  )
+}
+
+export default MyApp
+
+
+
+2º------
 
 <<en _app.jsx  en este orden de importacion y ya te funciona
 import 'bootstrap/dist/css/bootstrap.css';
