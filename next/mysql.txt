@@ -6,6 +6,30 @@ https://javascript.plainenglish.io/connect-mysql-and-authentication-on-next-js-7
 import mysql from "serverless-mysql";
 
 const db = mysql({
+    config: {
+
+        host: process.env.DATABASE_HOST,
+        user: process.env.DATABASE_USER,
+        password: process.env.DATABASE_PASSWORD,
+        database: process.env.DATABASE_NAME_USERS,
+         
+    }
+});
+
+export const connectDb = async ({ query, values }) => {
+
+        const result = await db.query(query, values,);
+        await db.end();
+        db.quit();
+        return result; 
+}
+
+
+
+
+---------
+
+const db = mysql({
 
     config : {
 
