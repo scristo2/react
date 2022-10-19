@@ -1,0 +1,19 @@
+async function getServerSideProps(context) {
+       
+        console.log(context.query); ///<<<<<< esto
+
+        //elimino cookie de redirecion aqui
+        if (getCookie("searchPlayer", { req: context.req, res: context.res })) {
+
+            deleteCookie("searchPlayer", { req: context.req, res: context.res });
+        }
+
+        return {
+
+            props: {
+
+                user: context.req.session?.user,
+                lang: context.locale
+            }
+        }
+    }
