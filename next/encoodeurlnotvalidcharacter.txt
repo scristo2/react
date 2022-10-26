@@ -1,0 +1,7 @@
+export function encode(str) {
+    return encodeURIComponent(str);
+  }
+  
+export function decode(str) {
+    return decodeURIComponent(str);
+  }
