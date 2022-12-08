@@ -1,0 +1,21 @@
+import { NextPage } from "next";
+import Header from "./Header";
+import Footer from "./Footer";
+import React from "react";
+
+interface LayoutProps {
+
+    children : React.ReactNode;
+    lang : String
+}
+
+
+const Layout : NextPage<LayoutProps> = (props) => {
+
+    return(<div>
+        <Header lang={props.lang}/>
+        {props.children}
+    </div>)
+}
+
+export default Layout;
