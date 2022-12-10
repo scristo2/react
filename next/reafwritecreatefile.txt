@@ -1,0 +1,17 @@
+https://nodejs.dev/en/learn/writing-files-with-nodejs/
+import { NextApiRequest, NextApiResponse } from "next"
+import { promises as fs } from "fs";
+import path from "path";
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+
+  const pathtext = path.join(process.cwd(), 'public');
+
+  const fileContent: String = await fs.writeFile(pathtext + "/tests.txt", "\nhaber si de una vez esta bien", { flag: 'a+' })
+    .then(data => { return 'yeah' })
+    .catch(e => {
+      return 'nop';
+    })
+
+
+  return res.status(200).send({ name: fileContent });
