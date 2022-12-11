@@ -1,0 +1,29 @@
+interface interfaceProvider{
+
+    children : React.ReactNode
+}
+
+interface AppcontextInterface {
+
+    user : Array<any>,
+    setUser :  Dispatch<SetStateAction<Array<any>>> #### es eltipo de usestate,si quieres que devulva en vez de un array pues quitar Array<any>> y pones String,Number etc
+}
+
+export const AppContext = createContext<AppcontextInterface>({
+
+     user : [],
+     setUser : async () => null
+});
+
+export const UseContext = () =>  useContext(AppContext);
+
+
+export const AppProvider = ({children} : interfaceProvider) => {
+
+    const [user, setUser] = useState<Array<any>>([]);
+
+
+    return(
+        <AppContext.Provider value={{user : user, setUser : setUser}}>{children}</AppContext.Provider>
+    )
+}
