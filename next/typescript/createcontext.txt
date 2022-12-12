@@ -1,3 +1,50 @@
+import React, {
+  createContext,
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useState,
+} from 'react';
+
+interface hola {
+  name: string;
+  isLogged: boolean;
+}
+
+const user: hola = {
+  name: '',
+  isLogged: false,
+};
+
+interface ContextChildren {
+  children: React.ReactNode;
+}
+
+interface AppContext {
+  name: typeof user | null;  ###acoradrse typeof en este caso user
+  setName: Dispatch<SetStateAction<typeof user | null>>;
+}
+
+const ContextValue = {
+  name: null,
+  setName: async () => {},
+};
+
+const AppContext = createContext<AppContext>(ContextValue);
+
+export const UseContext = () => useContext(AppContext);
+
+export const ContextProvider = ({ children }: ContextChildren) => {
+  const [names, setName] = useState<typeof user | null>(null);
+
+  return (
+    <AppContext.Provider value={{ name: names, setName: setName }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
+
+###este tambien es valido
 interface interfaceProvider{
 
     children : React.ReactNode
