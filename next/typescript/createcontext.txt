@@ -8,7 +8,7 @@ import React, {
 
 interface hola {
   name: string;
-  isLogged: boolean;
+  isLogged: boolean; 
 }
 
 const user: hola = {
