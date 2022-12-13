@@ -1,0 +1,5 @@
+ const clickAsk = (e : React.MouseEvent<HTMLElement>) => {
+         
+         alert(e.currentTarget.id);
+        
+    }
