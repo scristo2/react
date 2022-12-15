@@ -1,0 +1,6 @@
+entarr con github 
+coger apukey 
+<Script src="https://js.hcaptcha.com/1/api.js" async defer></Script>
+npm install @hcaptcha/react-hcaptcha --save
+npm install -D @hcaptcha/types
+<HCaptcha sitekey={`2d190005-bb5f-4947-bc69-6613fb939cd9`} theme="dark" onError={() => ###} onVerify=({)  onVerify={(token, ekey ) => {}/> process env no vale
