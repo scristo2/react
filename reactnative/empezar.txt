@@ -1,0 +1,4 @@
+despues de instalar expo con el command npm install -g expo-cli
+despues expo init nameapp
+cd nameapp
+npm start
