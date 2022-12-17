@@ -1,0 +1,31 @@
+interface test {
+  id: string;
+  name: string;
+}
+
+export default function Home() {
+  const aa: Array<test> = [
+    { id: "1", name: "sergio" },
+    { id: "2", name: "cris" },
+  ];
+
+  return (
+    <SafeAreaView>
+      <FlatList
+        data={aa}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item, index }) => (
+          <View style={{ backgroundColor: "grey" }}>
+            <Text>{item.name}</Text>
+          </View>
+        )}
+        ItemSeparatorComponent={() => <View style={{ marginBottom: 10 }} />}
+        ListHeaderComponent={() => (
+          <View>
+            <Text style={{ fontWeight: "bold", margin: 10 }}>uSUARIOS:</Text>
+          </View>
+        )}
+      />
+    </SafeAreaView>
+  );
+}
