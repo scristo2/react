@@ -35,7 +35,7 @@ import { useState } from 'react';
 
 export default function App() {
 
-  const [aa, bb] = useState("es");
+  const [aa, bb] = useState(t.locale.toString().substring(0, 2));
 
   const lang = new I18n({en, es, fr });
   lang.defaultLocale = aa;
@@ -49,6 +49,7 @@ export default function App() {
       <View style={{ flex: 5 }}>
         <TextInput placeholder='password' style={{ height: 40, borderWidth: 1 }}></TextInput>
         <Button title='click' onPress={() => bb("fr")}/>
+        <Text>lenguaje eGGGs : {lang.t("title")}</Text>
       </View>
     </View>
   );
