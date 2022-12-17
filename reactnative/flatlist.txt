@@ -1,3 +1,4 @@
+#ya tiene scroll por defecto cuando no entre
 interface test {
   id: string;
   name: string;
