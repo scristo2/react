@@ -1,0 +1,22 @@
+export default function App() {
+
+  const [aa, bb] = useState(t.locale.toString().substring(0, 2));
+
+  const lang = new I18n({ en, es, fr });
+  lang.defaultLocale = aa;
+  lang.locale = aa;
+
+  return (
+    <SafeAreaView style={styles.container}> ###con safeareaview
+     <View>
+      <Text>AAA</Text>
+     </View>
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  },
+});
