@@ -2,3 +2,13 @@ despues de instalar expo con el command npm install -g expo-cli
 despues expo init nameapp
 cd nameapp
 npm start
+mejor crear una carpeta con src y dentro otra carpeta con screen,y components y demas para que no aparaezca en en app.tsx mejor
+import Home from "./src/screens/Home";
+
+export default function App() {
+  return (
+    <>
+      <Home />
+    </>
+  );
+}
