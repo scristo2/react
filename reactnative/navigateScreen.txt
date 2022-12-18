@@ -1,0 +1,51 @@
+#yarn expo install @react-navigation/native @react-navigation/native-stack
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Profile from "./Profile";
+import Register from "./Register";
+import ResetPassword from "./ResetPassword";
+import Login from "./Login";
+
+const Stack = createNativeStackNavigator();
+
+export default function Home() {
+  const context = UseContext();
+
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Register"
+          component={Register}
+          options={{ title: "Create account" }}
+        />
+        <Stack.Screen name="ResetPassword" component={ResetPassword} />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+##y luego en los componentes como esta envuelto en el home se le atribute una props llamada navigation
+export default function Profile({ navigation }: any) {
+  const context = UseContext();
+
+  return (
+    <View>
+      <TouchableHighlight onPress={() => navigation.navigate("Login")}>
+        <View>
+          <Text>log out</Text>
+        </View>
+      </TouchableHighlight>
+    </View>
+  );
+}
