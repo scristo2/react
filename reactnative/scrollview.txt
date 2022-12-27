@@ -1,0 +1,17 @@
+<ScrollView contentContainerStyle={{flexGrow : 1}} keyboardShouldPersistTaps={"always"} > ##coge todo el ancho de l apantalla y la segunda funcion es para que cuando le des a un boton no se cierre el teclado y vaya de un solo click el boton 
+            <ImageBackground source={imageBackground} resizeMode={"cover"} style={styles.image}>
+                <View style={styles.form}>
+                    <View style={styles.containerElementsForm}><TextInput style={styles.inputText} onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => setEmail(e.nativeEvent.text)} value={email} placeholder="enter your email" /></View>
+                    <View style={styles.containerElementsForm}><TextInput style={styles.inputText} onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => setEmail(e.nativeEvent.text)} value={email} placeholder="enter your email" /></View>
+                    <View style={styles.containerElementsForm}><TextInput style={styles.inputText} onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => setPassword(e.nativeEvent.text)} value={password} secureTextEntry={true} placeholder="enter your password" /></View>
+                    {isError ? <View style={styles.containerError}>
+                        <Text style={styles.textError}>{errorText}</Text>
+                    </View> : ""}
+                    {isLoading ? <View style={styles.containerGif}><Image style={styles.gifLoading} source={imageLoading} /></View> : <TouchableOpacity onPress={submitLogin} style={styles.containerElementsFormButton}><Text style={{ textAlign: "center" }}>access</Text></TouchableOpacity>}
+                </View>
+            </ImageBackground>
+            <View style={styles.menuButtom}>
+                <TouchableOpacity onPress={() => navigation.navigate("Register")} style={styles.menuButtomItem}><Image style={styles.logosMenuButtom} source={imageLogoRegisterMenuButtom} /><Text>create account</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate("ResetPassword")} style={styles.menuButtomItem}><Image style={styles.logosMenuButtom} source={imageLogoResetPasswordMenuButtom} /><Text>Reset password</Text></TouchableOpacity>
+            </View>
+        </ScrollView>
