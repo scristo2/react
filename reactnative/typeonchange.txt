@@ -1,0 +1,1 @@
+<TextInput style={styles.inputText} onChange={(e : NativeSyntheticEvent<TextInputChangeEventData>) => setEmail(e.nativeEvent.text)} value={email}   placeholder="enter your email"/>
