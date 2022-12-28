@@ -1,0 +1,20 @@
+##funciona muy bien en iphone y android
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+ <View style={styles.container}>
+            <ImageBackground source={imageBackground} resizeMode={"cover"} style={styles.image}>
+                <KeyboardAwareScrollView contentContainerStyle={{flexGrow : 1}}>
+                    <View style={styles.form}>
+                        <View style={styles.containerElementsForm}><TextInput style={styles.inputText} onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => setEmail(e.nativeEvent.text)} value={email} placeholder={context.translater?.t("firstInputLoginPlaceholder")} /></View>
+                        <View style={styles.containerElementsForm}><TextInput style={styles.inputText} onChange={(e: NativeSyntheticEvent<TextInputChangeEventData>) => setPassword(e.nativeEvent.text)} value={password} secureTextEntry={true} placeholder="enter your password" /></View>
+                        {isError ? <View style={styles.containerError}>
+                            <Text style={styles.textError}>{errorText}</Text>
+                        </View> : ""}
+                        {isLoading ? <View style={styles.containerGif}><Image style={styles.gifLoading} source={imageLoading} /></View> : <TouchableOpacity onPress={submitLogin} style={styles.containerElementsFormButton}><Text style={{ textAlign: "center" }}>access</Text></TouchableOpacity>}
+                    </View>
+                    <View style={styles.menuButtom}>
+                        <TouchableOpacity onPress={() => navigation.navigate("Register")} style={styles.menuButtomItem}><Image style={styles.logosMenuButtom} source={imageLogoRegisterMenuButtom} /><Text>create account</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate("ResetPassword")} style={styles.menuButtomItem}><Image style={styles.logosMenuButtom} source={imageLogoResetPasswordMenuButtom} /><Text>Reset password</Text></TouchableOpacity>
+                    </View>
+                </KeyboardAwareScrollView>
+            </ImageBackground >
+        </View >
