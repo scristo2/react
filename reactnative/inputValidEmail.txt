@@ -1,0 +1,6 @@
+function isValidEmail(email: string) {
+        return /\S+@\S+\.\S+/.test(email);
+ }
+ 
+ 
+ ##con esta function cuando tengas el dato del input dices IF(isvalidemail(xxxxx))
