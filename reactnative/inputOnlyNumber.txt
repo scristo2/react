@@ -1,0 +1,1 @@
+<TextInput ###keyboardType="numeric" style={styles.inputPhone} placeholder="numero de telefono" />
