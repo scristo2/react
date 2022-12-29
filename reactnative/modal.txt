@@ -8,3 +8,9 @@
                         <TouchableOpacity onPress={() => setVisibleModal(!visibleModal)}><View><Text>entendidio</Text></View></TouchableOpacity>
                     </View>
                 </View>
+                
+                
+ ##en ios no dej amargen en el top,fijate en platform.os para hacerlo               
+<Modal animationType="slide"  visible={true}>
+                <View style={{flex : 1, backgroundColor : "#000", marginTop : Platform.OS === "android" ? 0 : Constants.statusBarHeight}}><FlatList data={prefixies} ListHeaderComponent={() => <View style={{  marginBottom: 10, padding: 10, backgroundColor: "red" }}><Text style={{ fontWeight: "bold", fontSize: 20, color: "white" }}>Lista de paises en ingles</Text></View>} keyExtractor={(item) => item.code} ItemSeparatorComponent={() => <View style={{ margin: 20 }} />} renderItem={({ item, index }) => (<View key={index} style={{ margin: 10 }}><Text style={{color : "#fff"}}>{item.name} {item.dial_code}</Text></View>)} /></View>
+            </Modal>                
