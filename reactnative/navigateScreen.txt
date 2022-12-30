@@ -36,8 +36,23 @@ export default function Home() {
 }
 
 ##y luego en los componentes como esta envuelto en el home se le atribute una props llamada navigation
+##en el principal el useeffect no hace nda,por eso usar useeffctfocus como esta abajo
+import { useFocusEffect } from "@react-navigation/native";
 export default function Profile({ navigation }: any) {
   const context = UseContext();
+  
+  useFocusEffect(
+        React.useCallback(() => {
+            
+             //clean up
+            return () => {
+
+                 setEmail("");
+                 setPassword("");
+                 setError(false);
+            };
+        }, [navigation])
+    );
 
   return (
     <View>
