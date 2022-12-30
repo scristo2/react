@@ -1,0 +1,1 @@
+props.navigation.replace("Login"); debe usuar navigate usa replace
