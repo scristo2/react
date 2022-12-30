@@ -38,7 +38,8 @@ export default function Home() {
 ##y luego en los componentes como esta envuelto en el home se le atribute una props llamada navigation
 ##en el principal el useeffect no hace nda,por eso usar useeffctfocus como esta abajo
 import { useFocusEffect } from "@react-navigation/native";
-export default function Profile({ navigation }: any) {
+import {NativeStackScreenProps} from "@react-navigation/native-stack";
+export default function Profile(props: NativeStackScreenProps<any>) {
   const context = UseContext();
   
   useFocusEffect(
