@@ -1,0 +1,1 @@
+<View style={{ alignSelf: "center" }}></View>
