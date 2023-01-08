@@ -14,6 +14,18 @@ export default async  function handler(req, res) {
         ssl: true,
         port : ''
     });
+    
+    ###ejemplo hotmail
+    
+     const client = new SMTPClient({
+
+    user: "j@hotmail.com",
+    password: "password",
+    host: "smtp.office365.com",
+    port: 587,
+    tls : true
+   
+  });
 
     try {
         const message = await client.sendAsync({
