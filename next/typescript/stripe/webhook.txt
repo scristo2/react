@@ -31,7 +31,10 @@ export default async function handler(
     // Get the object from stripeEvent
 
     switch (event.type) {
-      case "invoice.payment_succeeded":  ##https://stripe.com/docs/cli/trigger lista evenetos
+    case "checkout.session.completed":
+        console.log(event.data.object.customer_details.address);
+        break;
+      ## este no=> case "invoice.payment_succeeded":  ##https://stripe.com/docs/cli/trigger lista evenetos
         console.log(event.data.object.customer_address.line1);
     }
     // Send success response
