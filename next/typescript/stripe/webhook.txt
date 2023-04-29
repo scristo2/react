@@ -1,0 +1,49 @@
+en la carpeta de api de nexts
+
+import { NextApiRequest, NextApiResponse } from "next";
+import initStripe from "stripe";
+import { buffer } from "micro";
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
+##importante => 
+export const config = { api: { bodyParser: false } };
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const reqBuffer = await buffer(req);
+  const signature = req.headers["stripe-signature"];
+  const endpointSecret =
+    "whsec_271de1f19b3e992b6c1a38a28f57eec687c513c1c2480ce678ce60492f01154b";
+
+  let event;
+
+  try {
+    event = stripe.webhooks.constructEvent(
+      reqBuffer,
+      signature,
+      endpointSecret
+    );
+
+    //console.log(`stripeEvent: ${stripeEvent.type}`);
+
+    // Get the object from stripeEvent
+
+    switch (event.type) {
+      case "invoice.payment_succeeded":  ##https://stripe.com/docs/cli/trigger lista evenetos
+        console.log(event.data.object.customer_address.line1);
+    }
+    // Send success response
+    return res.send({ status: "success" });
+  } catch (error) {
+    console.log("stripe webhook error");
+
+    // Send error response
+    return res.send({
+      status: "error",
+      code: error.code,
+      message: error.message,
+    });
+  }
+}
