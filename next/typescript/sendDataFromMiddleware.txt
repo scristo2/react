@@ -1,0 +1,21 @@
+acorarse que siempre es por x-nombrequequieras
+//middleware
+export default async function middleware(req: NextRequest) {
+       
+      const requestHeader = new Headers(req.headers);
+      requestHeader.set("x-carrito", "23");
+
+      const res = NextResponse.next({
+            request : {
+                  headers : requestHeader
+            }
+      });
+     
+      //mas logica u otra cosa que hacer
+     
+      return res;
+}
+
+
+///getserversideprops page
+console.log(context.req.headers['x-carrito']);
