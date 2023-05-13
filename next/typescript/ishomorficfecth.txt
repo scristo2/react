@@ -1,0 +1,6 @@
+//creamos a la altura de tsconfig.json un archivo llamado index.d.ts
+declare namespace _fetch { }
+declare const _fetch: typeof fetch;
+export = _fetch;
+
+//y luego en cualquier sitio import _fecth
