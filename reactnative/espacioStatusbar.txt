@@ -3,6 +3,9 @@ import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import Constants from "expo-constants";
 
+### si te da error con el,ejecutar estos comandos 
+yarn add react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
