@@ -82,3 +82,82 @@ export default function Profile(props: NativeStackScreenProps<any>) {
 
      console.log(props.route.params!.cambiado);
   })
+  
+  
+  ###aqui es el mas imprtante,vale para web y moviles,y pasar parametos a la url para la web
+  import { View, Text } from "react-native"
+import React, { useState } from "react"
+import { NavigationContainer } from "@react-navigation/native"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
+import Login from "./Login"
+import Profile from "./Profile"
+import ResetPassword from "./ResetPassword"
+
+const Stack = createNativeStackNavigator();
+
+const config = {
+
+    screens : {
+
+        Login : "iniciar-sesion",
+        ResetPassword : "recuperar-contraseña"
+    },
+}
+
+const linking = {
+
+    prefixes : [],
+    config
+}
+
+
+const HomeScreen = () => {
+
+    const [isLogged, setIsLogged] = useState<boolean>(false);
+
+    return (<NavigationContainer  linking={linking}>
+        <Stack.Navigator>
+            {
+                //si estas logado
+                isLogged ? (
+                    <Stack.Screen name="Perfil" component={Profile} />
+                ) :
+                    //si no estas logado
+                    (
+                        <>
+                            <Stack.Screen name="Login" component={Login} options={{ "title": "Iniciar sesion", "headerShown": false, }} />
+                            <Stack.Screen name="ResetPassword" component={ResetPassword} options={{ "title": "Recuperar contraseña", "headerShown": false, }} />
+                        </>
+                    )
+
+            }
+        </Stack.Navigator>
+    </NavigationContainer>)
+}
+
+export default HomeScreen;
+
+
+##el componente login de arriba donde se le pasa un paramtro a la url web
+import { Text, View, TouchableHighlight, TouchableOpacity } from "react-native"
+import {NativeStackScreenProps} from "@react-navigation/native-stack";
+import { useFocusEffect } from "@react-navigation/native";
+import React from "react";
+const Login = (props : NativeStackScreenProps<any>) => {
+   
+    useFocusEffect(() => {
+
+        console.log(props.route)
+    })
+
+    return(<View>
+        <View></View>
+        <View>
+            <TouchableOpacity onPress={() => props.navigation.navigate("ResetPassword", {usuario : "sergio"})}>
+                <Text>olvide mi contraseña</Text>
+            </TouchableOpacity>
+        </View>
+    </View>)
+}
+
+export default Login;
