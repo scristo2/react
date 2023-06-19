@@ -1,23 +1,43 @@
-import { Router, Route, Routes, BrowserRouter } from 'react-router-dom';
-render() {
+import React, { useState } from 'react';
+import './App.css';
+import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
+import Login from './screens/Login';
+import Profile from './screens/account/Profile';
+import NotFound from './screens/NotFound';
+import PrivateRoute from './components/PrivateRoute';
 
-      return (
-         
-             <div className='App'>
-            <BrowserRouter>
-               <nav>
-                  <ul>
-                     <li><Link to="/">Home</Link></li> 
-                     <li><Link to="/about">About us</Link></li>
-                  </ul>
-               </nav>
-               <Routes>
-                  <Route exact path="/" element={<Principal text="this is the principal" />} />
-                  <Route exact path="/about" element={<Abouts text="this is about us" />} />
-                  <Route path="*" element={<NotFound text="Not found" />} /> {/*not found*/}
-               </Routes>
-            </BrowserRouter>
-         </div>
-         
-      );
-   }   
+
+function App() {
+
+  const [isLogged, setIsLogged] = useState<boolean>(false);
+
+
+  return (
+
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Login />} />
+          <Route element={<PrivateRoute authenticated={isLogged}/>}>
+            <Route element={<Profile/>} path='/account/my-profile' />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
+}
+
+export default App;
+
+###paginas con credenciale so protegidas
+import React from "react";
+import { PrivateRouteProps } from "../lib/privateRouteProps";
+import {Outlet, Navigate} from "react-router-dom";
+
+const PrivateRoute = (props : PrivateRouteProps) => {
+
+    return(props.authenticated ? <Outlet /> : <Navigate to={"/"}/>)
+}
+
+export default PrivateRoute;
