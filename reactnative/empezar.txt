@@ -1,3 +1,7 @@
+--normal react native
+npx react-native@latest init walladog --package-name com.sergiocristobal.walladog
+
+---expo
 despues de instalar expo con el command npm install -g expo-cli
 despues expo init nameapp
 ##actualizar al ultimo es yarn global add expo-cli
